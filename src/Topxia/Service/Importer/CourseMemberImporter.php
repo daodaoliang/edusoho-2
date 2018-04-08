@@ -391,7 +391,6 @@ class CourseMemberImporter extends Importer
 
     public function getTemplate(Request $request)
     {
-        echo '444';
         $courseId = $request->query->get('courseId');
         $course   = $this->getCourseService()->getCourse($courseId);
         return $this->render('TopxiaWebBundle:CourseStudentManage:import.html.twig', array(
@@ -403,7 +402,6 @@ class CourseMemberImporter extends Importer
     public function tryImport(Request $request)
     {
         $courseId = $request->query->get('courseId');
-
 
         if (empty($courseId)) {
             $courseId = $request->request->get('courseId');

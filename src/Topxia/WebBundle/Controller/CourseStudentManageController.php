@@ -13,7 +13,7 @@ class CourseStudentManageController extends BaseController
 {
     public function indexAction(Request $request, $id)
     {
-        echo 111;
+//        echo 111;
         $course = $this->getCourseService()->tryManageCourse($id);
 
         $fields    = $request->query->all();

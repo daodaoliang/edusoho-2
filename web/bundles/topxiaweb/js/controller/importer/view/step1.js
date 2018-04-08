@@ -33,6 +33,7 @@ define(function (require, exports, module) {
                 success: function (res) {
                     var status = res.status;
                     var eventListener = 'on' + status.charAt(0).toUpperCase() + status.substr(1);
+
                     if (Step1View.prototype.hasOwnProperty(eventListener)) {
                         self[eventListener](res);
                     } else {

@@ -10,7 +10,6 @@ class ExploreController extends CourseBaseController
 {
     public function courseAction(Request $request, $category)
     {
-        echo '我已经找到了页面';
         $conditions    = $request->query->all();
 
         $selectedTag        = '';

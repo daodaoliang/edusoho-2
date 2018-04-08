@@ -9,7 +9,6 @@ use Topxia\Service\Importer\ImporterProcessorFactory;
 
 class ImporterController extends BaseController
 {
-    //检查上传文件
     public function checkAction(Request $request, $type)
     {
         $importer = ImporterFactory::create($type);
@@ -28,8 +27,11 @@ class ImporterController extends BaseController
 
     public function templateAction(Request $request, $type)
     {
-        $importer = ImporterFactory::create($type);
-        $importer->tryImport($request);
+//        echo 'template';
+        $importer = ImporterFactory::create($type);//获取到了Topxia\Service\Importer\CourseMemberImporter ,2，实例化new $class()得到
+        //Topxia\Service\Importer\CourseMemberImporter
+        $importer->tryImport($request);//var_dump($importer->tryImport($request)); //null
+        echo 222;
         $template = $importer->getTemplate($request);
         return $template;
     }

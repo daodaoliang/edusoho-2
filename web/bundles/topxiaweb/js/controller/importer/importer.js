@@ -42,6 +42,8 @@ define(function (require, exports, module) {
             }
 
             var importer = new Importer(this.successData);
+            console.log(this.options.type);
+            console.log(this.options.type);
             importer.set('type', this.options.type);
             importer.set('importUrl', this.options.importUrl);
             var successView = new Step2SuccessView({
